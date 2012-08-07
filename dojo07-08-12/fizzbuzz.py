@@ -13,12 +13,18 @@ import unittest
 def fizzbuzz(i):
   if i % 3 == 0 :
     return "Fizz"
-  elif i == 5:
+  elif i % 5 == 0:
     return "Buzz"
   return i
 
 
 class FBTest(unittest.TestCase):
+
+    def test_10(self):
+        self.assertEqual(fizzbuzz(10), "Buzz")
+
+    def test_7(self):
+        self.assertEqual(fizzbuzz(7), 7)
 
     def test_1(self):
         self.assertEqual(fizzbuzz(1), 1)
