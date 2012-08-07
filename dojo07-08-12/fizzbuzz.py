@@ -11,15 +11,20 @@ Neste problema, você deverá exibir uma lista de 1 a 100, um em cada linha, com
 import unittest
 
 def fizzbuzz(i):
-  if i % 3 == 0 :
-    return "Fizz"
-  elif i % 5 == 0:
-    return "Buzz"
-  return i
+    if i % 15 == 0:
+        return "FizzBuzz"
+    elif i % 3 == 0:
+        return "Fizz"
+    elif i % 5 == 0:
+        return "Buzz"
+    return i
 
 
 class FBTest(unittest.TestCase):
 
+    def test_15(self):
+        self.assertEqual(fizzbuzz(15), "FizzBuzz")
+        
     def test_10(self):
         self.assertEqual(fizzbuzz(10), "Buzz")
 
