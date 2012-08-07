@@ -20,10 +20,9 @@ def fizzbuzz(i):
     return i
     
 def lista_fizzbuzz(tamanho):
-    lista = [1] * tamanho
-    lista[1] = 2
+    lista = range(1, tamanho + 1)
     lista[2] = "Fizz"
-    lista[3] = 4
+
     
     return lista
 
