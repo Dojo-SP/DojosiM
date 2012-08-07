@@ -18,9 +18,20 @@ def fizzbuzz(i):
     elif i % 5 == 0:
         return "Buzz"
     return i
+    
+def lista_fizzbuzz(tamanho):
+    return [1] * tamanho
+
+class FBListTest(unittest.TestCase):
+
+    def test_obter_lista_tem_100_itens(self):
+        self.assertEqual(len(lista_fizzbuzz(100)), 100)
 
 
 class FBTest(unittest.TestCase):
+
+    def test_30(self):
+        self.assertEqual(fizzbuzz(30), "FizzBuzz")
 
     def test_15(self):
         self.assertEqual(fizzbuzz(15), "FizzBuzz")
@@ -51,3 +62,6 @@ class FBTest(unittest.TestCase):
         
 if __name__ == "__main__":
     unittest.main()
+    
+    
+
