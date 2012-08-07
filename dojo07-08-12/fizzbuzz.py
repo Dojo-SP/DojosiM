@@ -20,12 +20,24 @@ def fizzbuzz(i):
     return i
     
 def lista_fizzbuzz(tamanho):
-    return [1] * tamanho
+    lista = [1] * tamanho
+    lista[1] = 2
+    
+    return lista
 
 class FBListTest(unittest.TestCase):
 
     def test_obter_lista_tem_100_itens(self):
         self.assertEqual(len(lista_fizzbuzz(100)), 100)
+
+    def test_obter_lista_tem_25_itens(self):
+        self.assertEqual(len(lista_fizzbuzz(25)), 25)
+    
+    def test_elemento_1_lista(self):
+        self.assertEqual(lista_fizzbuzz(100)[0], fizzbuzz(1))
+        
+    def test_elemento_2_lista(self):
+        self.assertEqual(lista_fizzbuzz(100)[1], fizzbuzz(2))
 
 
 class FBTest(unittest.TestCase):
