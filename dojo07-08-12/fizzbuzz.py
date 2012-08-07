@@ -22,6 +22,8 @@ def fizzbuzz(i):
 def lista_fizzbuzz(tamanho):
     lista = [1] * tamanho
     lista[1] = 2
+    lista[2] = "Fizz"
+    lista[3] = 4
     
     return lista
 
@@ -39,6 +41,11 @@ class FBListTest(unittest.TestCase):
     def test_elemento_2_lista(self):
         self.assertEqual(lista_fizzbuzz(100)[1], fizzbuzz(2))
 
+    def test_elemento_3_lista(self):
+        self.assertEquals(lista_fizzbuzz(100)[2], fizzbuzz(3))
+        
+    def test_elemento_4_lista(self):
+        self.assertEquals(lista_fizzbuzz(100)[3], fizzbuzz(4))
 
 class FBTest(unittest.TestCase):
 
