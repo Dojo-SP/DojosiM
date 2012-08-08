@@ -24,8 +24,6 @@ def lista_fizzbuzz():
     lista = map(fizzbuzz,lista)
     lista[2] = "Fizz"
     lista[4] = "Buzz"
-
-
     
     return lista
 
