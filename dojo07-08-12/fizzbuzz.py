@@ -21,6 +21,7 @@ def fizzbuzz(i):
     
 def lista_fizzbuzz():
     lista = range(1, 101)
+    lista = map(fizzbuzz,lista)
     lista[2] = "Fizz"
     lista[4] = "Buzz"
 
