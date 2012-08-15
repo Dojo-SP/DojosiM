@@ -1,7 +1,8 @@
 RETROSPECTIVA
 ===================
 
-***Negativo
+**Negativo**
+
 	Testes sem mock e sem setup.
 	Muita parada para ler documentação.
 	Faltou Git.
@@ -11,7 +12,8 @@ RETROSPECTIVA
 	Faltou gente.
 	Faltou o quadro.		
 
-***Positivo
+**Positivo**
+
 	LISP é divertido.
 	watch
 	Funcional
