@@ -2,10 +2,9 @@
 class Backup
 
     def compare(file1, file2)
-        if file2 == "file2.txt"
-            return false
+        if file2 == file1
+            return true
         end
-        true
     end
 
 end

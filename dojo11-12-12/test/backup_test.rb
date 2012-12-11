@@ -18,5 +18,9 @@ class BackupTest < Test::Unit::TestCase
         assert ! Backup.new.compare('file1.txt', 'file2.txt')
         
     end
-
+    
+    def test_compare_equals_files_name
+         assert Backup.new.compare("file2.txt", "file2.txt")
+    end
+        
 end
