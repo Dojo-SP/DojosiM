@@ -4,6 +4,7 @@ require 'test/unit'
 $expected_dir = false
 def Dir.[](path)
     $expected_dir = true    
+    ["a", "b", "c", "d", "e", "f", "f", "a"]
 end
 
 class BackupTest < Test::Unit::TestCase
