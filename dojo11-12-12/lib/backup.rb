@@ -6,5 +6,9 @@ class Backup
             return true
         end
     end
+    
+    def backup(dir)
+        Dir[dir]
+    end
 
 end
