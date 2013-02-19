@@ -26,13 +26,7 @@ class M(object):
   pass
 
 def passo_vida(tabuleiro):
-  if len(tabuleiro) == 2:
-    if len(tabuleiro[0]) == 2:
-      return  [[M, M],[M, M]]
-    else:
-      return [[M], [M]]
-  
-  return [[M]]
+  return [[M for celula in linha] for linha in tabuleiro]
 
 class TestPassoVida(object): # unittes.TestCase
   
@@ -48,4 +42,8 @@ class TestPassoVida(object): # unittes.TestCase
   def teste_quatro_celulas_mortas(self):
     celulas = [[M, M],[M, M]]
     assert passo_vida(celulas) ==  [[M, M],[M, M]]
+    
+  def test_quatro_celulas_vivas(self):
+    celulas = [[V,V],[V,V]]
+    assert passo_vida(celulas) == [[V,V],
 
