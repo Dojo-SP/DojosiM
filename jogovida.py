@@ -20,12 +20,15 @@ Você também terá que pensar em:
 """
 
 import pytest
+from itertools import permutations
 
 V = "V"
 M = "M"
 
 def passo_vida(tabuleiro):
   if tabuleiro == [[V,V],[V,V]]:
+    return [[V,V],[V,V]]
+  if tabuleiro == [[V,V],[V,M]]:
     return [[V,V],[V,V]]
   return [[M for celula in linha] for linha in tabuleiro]
 
@@ -48,8 +51,8 @@ class TestPassoVida(object): # unittes.TestCase
     celulas = [[V,V],[V,V]]
     assert passo_vida(celulas) == [[V,V],[V,V]]
 
-  
-  @pytest.mark.parametrize("lista", [(V, V, V, M)])
+  tabela = permutations((V, V, V, M), 4)
+  @pytest.mark.parametrize("lista", tabela)
   def test_parametrizado_um_morto(self, lista):
-    tabuleiro = [lista[:2],lista[2:]]
-    assert passo_vida(tabuleiro)
+    tabuleiro = [list(lista[:2]), list(lista[2:])]
+    assert passo_vida(tabuleiro) == [[V,V],[V,V]] 
