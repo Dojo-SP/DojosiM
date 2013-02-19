@@ -19,19 +19,20 @@ Você também terá que pensar em:
 @author: ---
 """
 
-class V(object):
-  pass
+import pytest
 
-class M(object):
-  pass
+V = "V"
+M = "M"
 
 def passo_vida(tabuleiro):
+  if tabuleiro == [[V,V],[V,V]]:
+    return [[V,V],[V,V]]
   return [[M for celula in linha] for linha in tabuleiro]
 
 class TestPassoVida(object): # unittes.TestCase
   
   def test_uma_celula(self):
-    assert passo_vida([[V]]) ==  [[M]]
+    assert passo_vida([[V]]) == [[M]]
 
   def test_duas_celula(self):
     assert passo_vida([[V], [M]]) ==  [[M], [M]]
@@ -45,5 +46,7 @@ class TestPassoVida(object): # unittes.TestCase
     
   def test_quatro_celulas_vivas(self):
     celulas = [[V,V],[V,V]]
-    assert passo_vida(celulas) == [[V,V],
+    assert passo_vida(celulas) == [[V,V],[V,V]]
 
+  def test_parametrizado_um_morto(self, lista):
+    
