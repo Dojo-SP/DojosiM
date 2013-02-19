@@ -48,5 +48,8 @@ class TestPassoVida(object): # unittes.TestCase
     celulas = [[V,V],[V,V]]
     assert passo_vida(celulas) == [[V,V],[V,V]]
 
+  
+  @pytest.mark.parametrize("lista", [(V, V, V, M)])
   def test_parametrizado_um_morto(self, lista):
-    
+    tabuleiro = [lista[:2],lista[2:]]
+    assert passo_vida(tabuleiro)
