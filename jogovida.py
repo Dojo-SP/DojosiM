@@ -14,9 +14,17 @@ class M(object):
   pass
 
 def passo_vida(tabuleiro):
-  return [[M]]
+  if len(tabuleiro) == 2  
+    return [[M]]
 
 class TestPassoVida(object): # unittes.TestCase
   
   def test_uma_celula(self):
     assert passo_vida([[V]]) ==  [[M]]
+
+  def test_duas_celula(self):
+    assert passo_vida([[V], [M]]) ==  [[M], [M]]
+
+  def test_uma_celula_morta(self):
+    assert passo_vida([[M]]) ==  [[M]]
+
