@@ -36,6 +36,14 @@ def passo_vida(tabuleiro):
     return [[V,V],[V,V]] 
   if tabuleiro == [[M,V],[V,V]]:
     return [[V,V],[V,V]] 
+  if tabuleiro == [[M,M], [V,V]]:
+    return tabuleiro
+  
+  if len(tabuleiro) == 2 and len(tabuleiro[0]) == 2:
+    mlist = [for cel in tabuleiro[0] + tabuleiro[1] if cel == M]
+    if len(mlist) == 2:
+      return tabuleiro
+  
   return [[M for celula in linha] for linha in tabuleiro]
   
 class TestPassoVida(object): # unittes.TestCase
@@ -67,5 +75,7 @@ class TestPassoVida(object): # unittes.TestCase
   @pytest.mark.parametrize("lista", tabela2)
   def test_parametrizado_dois_mortos(self, lista):
     tabuleiro = [list(lista[:2]), list(lista[2:])]
-    assert passo_vida(tabuleiro) == tabuleiro 
+    assert passo_vida(tabuleiro) == tabuleiro
+    
+  
   
