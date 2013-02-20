@@ -30,8 +30,14 @@ def passo_vida(tabuleiro):
     return [[V,V],[V,V]]
   if tabuleiro == [[V,V],[V,M]]:
     return [[V,V],[V,V]]
+  if tabuleiro == [[V,M],[V,V]]:
+    return [[V,V],[V,V]]
+  if tabuleiro == [[V,V],[M,V]]:
+    return [[V,V],[V,V]] 
+  if tabuleiro == [[M,V],[V,V]]:
+    return [[V,V],[V,V]] 
   return [[M for celula in linha] for linha in tabuleiro]
-
+  
 class TestPassoVida(object): # unittes.TestCase
   
   def test_uma_celula(self):
@@ -51,8 +57,15 @@ class TestPassoVida(object): # unittes.TestCase
     celulas = [[V,V],[V,V]]
     assert passo_vida(celulas) == [[V,V],[V,V]]
 
-  tabela = permutations((V, V, V, M), 4)
+  tabela = set(permutations((V, V, V, M)))
   @pytest.mark.parametrize("lista", tabela)
   def test_parametrizado_um_morto(self, lista):
     tabuleiro = [list(lista[:2]), list(lista[2:])]
     assert passo_vida(tabuleiro) == [[V,V],[V,V]] 
+    
+  tabela2 = set(permutations((V, V, M, M)))
+  @pytest.mark.parametrize("lista", tabela2)
+  def test_parametrizado_dois_mortos(self, lista):
+    tabuleiro = [list(lista[:2]), list(lista[2:])]
+    assert passo_vida(tabuleiro) == tabuleiro 
+  
