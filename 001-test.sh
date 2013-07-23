@@ -13,3 +13,7 @@ it_works_for_4 () {
 it_works_for_6 () {
   test $(./001.sh 6) = 8
 }
+
+it_works_for_10 () {
+  test $(./001.sh 10) = 23
+}

@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 # Multiples of 3 and 5
-if [ $1 -eq 4 ]; then
-  echo 3
-elif [ $1 -eq 6 ]; then
-  echo 8
-else
-  echo 0
-fi
+
+sum_of_multiples=0
+
+for i in `seq $(( $1 - 1 ))`; do
+  if [ $(( $i % 3 )) = 0 -o $(( $i % 5 )) = 0 ]; then
+    sum_of_multiples=$(( $sum_of_multiples + $i ))
+  fi
+done
+
+echo $sum_of_multiples
