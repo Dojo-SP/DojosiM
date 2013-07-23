@@ -17,3 +17,14 @@ it_works_for_6 () {
 it_works_for_10 () {
   test $(./001.sh 10) = 23
 }
+
+it_works_for_10 () {
+  test $(./001.sh 10) = 23
+}
+
+it_works_for_1000 () {
+  expected=`python -c "print sum(x for x in range(1000) if (x % 3 == 0) or (x % 5 == 0))"`
+  test $(./001.sh 1000) = $expected
+  test $(./001.sh) = $expected
+}
+
