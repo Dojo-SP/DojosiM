@@ -1,0 +1,1 @@
+printf "C\nJavascript\nBash" | tail -n $(( $RANDOM % 3 + 1 )) | head -n 1
