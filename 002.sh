@@ -12,3 +12,15 @@ fibonacci () {
       n_1=$(( $n - $n_1 ))
     done
 }
+
+even () {
+  for n in `printf $@`; do
+    if [ $(( $n % 2 )) = 0 ]; then
+      echo $n
+    fi
+  done
+}
+
+sum_list () {
+  printf $@
+}
