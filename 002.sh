@@ -14,7 +14,7 @@ fibonacci () {
 }
 
 even () {
-  for n in `printf $@`; do
+  for n in $@; do
     if [ $(( $n % 2 )) = 0 ]; then
       echo $n
     fi

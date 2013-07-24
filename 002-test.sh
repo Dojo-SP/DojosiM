@@ -31,15 +31,19 @@ it_fibonacci_4_million () {
 describe "even"
 
 it_returns_list_of_even_numbers () {
-  test "$(even "2\n4")" = "`printf "2\n4"`"
+  test "$(even `printf "2\n4"`)" = "`printf "2\n4"`"
 }
 
 it_filters_one_odd_number () {
-  test "$(even "2\n3\n4")" = "`printf "2\n4"`"
+  test "$(even `printf "2\n3\n4"`)" = "`printf "2\n4"`"
 }
 
 describe "sum_list"
 
 it_sums_list_of_one_number () {
   test "$(sum_list "2")" = "2"
+}
+
+it_sums_list_of_two_number () {
+  test "$(sum_list "2\n4")" = "6"
 }
