@@ -24,7 +24,16 @@ it_fibonacci_28 () {
 }
 
 it_fibonacci_4_million () {
-  test "$(fibonacci 4000000)" = "`python -c "from audiolazy import z, impulse, takewhile; print '\n'.join(takewhile(lambda x: x <= 4000000, ((z ** -1) / (1 - z ** -1 - z ** -2))(impulse()).skip(2)).map(int).map(str))"`"
+  test "$(fibonacci 4000000)" = \
+       "`python -c "from audiolazy import z, impulse, takewhile; \
+                    print '\n'.join( \
+                      takewhile( \
+                        lambda x: x <= 4000000, \
+                        ((z ** -1) / (1 - z ** -1 - z ** -2)) \
+                          (impulse()).skip(2)) \
+                                      .map(int) \
+                                      .map(str)) \
+                   "`"
 }
 
 
