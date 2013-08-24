@@ -5,8 +5,14 @@ def ap_detector seq
         return false if seq[1] - seq[0] != seq[2] - seq[1]
         
     end
-
-    return false if seq == [1,2,4,4] 
+    if seq.size == 4 
+       return true if seq[1] - seq[0] == seq[2] - seq[1] && seq[3] - seq[2] == seq[1] - seq[0]
+       return false 
+      
+    end
+    #if seq.size > 4
+     # return true if seq.each
+    #end
 
 
   
