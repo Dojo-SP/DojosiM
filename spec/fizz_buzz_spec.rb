@@ -21,6 +21,7 @@ describe 'FizzBuzz' do
 
     it 'for a multiple of 15, returns "FizzBuzz"' do
       expect(fizz_buzz_for_one_number 15).to eq("FizzBuzz")
+      expect(fizz_buzz_for_one_number 30).to eq("FizzBuzz")
     end
   end
 end
