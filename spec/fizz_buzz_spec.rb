@@ -24,4 +24,10 @@ describe 'FizzBuzz' do
       expect(fizz_buzz_for_one_number 30).to eq("FizzBuzz")
     end
   end
+
+  describe '#fizz_buzz_for_numbers_less_or_equal_than' do
+    it 'to 1, returns list with "1"' do
+      expect(fizz_buzz_for_numbers_less_or_equal_than 1).to eq("1")
+    end
+  end
 end
