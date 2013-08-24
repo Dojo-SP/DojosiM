@@ -9,6 +9,7 @@ describe 'FizzBuzz' do
 
     it 'for a multiple of 3, returns "Fizz"' do
       expect(fizz_buzz_for_one_number 3).to eq("Fizz")
+      expect(fizz_buzz_for_one_number 6).to eq("Fizz")
     end
   end
 end
